@@ -1,15 +1,20 @@
+import Switcher from "./switcher.jsx"
+import BurgerButton from "./burgerButton.jsx"
+
 function Header(){
     return(
         <header>
-            <h1>My Website</h1>
+            <img src="/src/assets/MON LOGOwhite.svg" alt="LOGO"></img>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Services</li>
+                    <li className="menuItem menuItemActive">Home</li>
+                    <li className="menuItem">About</li>
+                    <li className="menuItem">Services</li>
+                    <li className="menuItem">Contacts</li>
                 </ul>
             </nav>
-            <button>Contact</button>
+            <Switcher/>
+            <BurgerButton/>
         </header>
     )
 }
