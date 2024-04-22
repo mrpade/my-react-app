@@ -8,6 +8,9 @@
   --lg-border-radius: 10px;
   --border: 2px solid #59c174;
 }
+*{
+  transition: color .3s ease-in, background-color .3s ease-in;
+}
 /*
 .poppins-regular {
   font-family: "Poppins", sans-serif;
@@ -37,6 +40,12 @@ header {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  transition: height .5s ease-in;
+}
+.navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,12 +56,13 @@ nav {
 }
 ul {
   display: flex;
+  padding-inline-start: 0;
   gap: 25px;
   list-style: none;
 }
-.menuItem {
+/*ListItem {
   transition: scale 0.2s ease-in;
-}
+}*/
 button {
   border: none;
   border-radius: var(--sm-border-radius);
@@ -70,6 +80,7 @@ header img {
   border-radius: 25px;
   border: 2px solid var(--third-color);
   display: none;
+  justify-content: start;
   align-items: center;
   animation: slideIn .5s ease-in 1 normal forwards;
 }
@@ -78,11 +89,13 @@ header img {
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: var(--third-color);
+  transition: transform .3s ease-in;
 }
 .burger {
   width: 50px;
   height: fit-content;
   align-content: center;
+  cursor: pointer;
   transition: scale 0.2s ease-in;
 }
 .burger div {
@@ -90,12 +103,26 @@ header img {
   height: 2px;
   background-color: var(--third-color);
   margin-left: auto;
-  cursor: pointer;
 }
 #burgerLine2 {
   width: 50%;
   margin-block: 5px;
   transition: margin 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+.dropdown{
+  display: none;
+  animation: slideIn .2s ease-in 1 normal forwards;
+}
+.dropdownMenu{
+  display: flex;
+  margin-block-end: 0;
+  justify-content: end;
+}
+hr{
+  background-color: var(--third-color);
+  height: 2px;
+  border: none;
+  border-radius: 1px;
 }
 
 /*EVENTS RULES*/
@@ -139,5 +166,8 @@ header img {
   }
   .burger {
     display: none;
+  }
+  .dropdown{
+    display: none !important;
   }
 }
