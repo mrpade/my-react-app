@@ -1,8 +1,12 @@
-import Button from "./button.jsx"
+import Welcome from "./welcome"
 
 function Container(){
   return (
-   
+
+    <div className="container">
+      <Welcome/>
+    </div>
+
   )
 }
 

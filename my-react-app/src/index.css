@@ -7,9 +7,10 @@
   --sm-border-radius: 5px;
   --lg-border-radius: 10px;
   --border: 2px solid #59c174;
+  --default-shadow: 0 2px 5px #3c3c3c;
 }
-*{
-  transition: color .3s ease-in, background-color .3s ease-in;
+* {
+  transition: color 0.3s ease-in, background-color 0.3s ease-in;
 }
 /*
 .poppins-regular {
@@ -33,7 +34,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: var(--third-color);
   font-size: 16px;
+  background-size: cover;
+  transition: background-position .2s ease-in-out;
 }
+
+/*HEADER*/
 header {
   color: var(--third-color);
   background-color: var(--primary-color);
@@ -43,16 +48,16 @@ header {
   display: block;
   justify-content: space-between;
   align-items: center;
-  transition: height .5s ease-in;
+  transition: height 0.5s ease-in;
 }
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 nav {
   display: none;
-  animation: slideIn .5s ease-in 1 normal forwards;
+  animation: slideIn 0.5s ease-in 1 normal forwards;
 }
 ul {
   display: flex;
@@ -60,16 +65,17 @@ ul {
   gap: 25px;
   list-style: none;
 }
-/*ListItem {
+.navItem {
   transition: scale 0.2s ease-in;
-}*/
+}
 button {
   border: none;
   border-radius: var(--sm-border-radius);
-  color: var(--third-color);
+  color: var(--primary-color);
   background-color: var(--secondary-color);
   padding: 5px;
   font-size: 1.1rem;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 header img {
   max-width: 100px;
@@ -82,14 +88,15 @@ header img {
   display: none;
   justify-content: start;
   align-items: center;
-  animation: slideIn .5s ease-in 1 normal forwards;
+  animation: slideIn 0.5s ease-in 1 normal forwards;
 }
-.switchButton {
+.switchButton,
+.switchButton2 {
   width: 25px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: var(--third-color);
-  transition: transform .3s ease-in;
+  transition: transform 0.3s ease-in;
 }
 .burger {
   width: 50px;
@@ -109,24 +116,86 @@ header img {
   margin-block: 5px;
   transition: margin 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
-.dropdown{
+.dropdown {
   display: none;
-  animation: slideIn .2s ease-in 1 normal forwards;
+  justify-content: space-between;
+  align-items: end;
+  margin-block-start: 10px;
+  animation: slideIn 0.2s ease-in 1 normal forwards;
 }
-.dropdownMenu{
+.dropdownMenu {
   display: flex;
+  width: fit-content;
   margin-block-end: 0;
   justify-content: end;
 }
-hr{
+.switcher2 {
+  width: 50px;
+  height: fit-content;
+  padding: 2px;
+  border-radius: 25px;
+  border: 2px solid var(--third-color);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  animation: slideLeft 0.5s ease-in 1 normal forwards;
+}
+
+hr {
   background-color: var(--third-color);
   height: 2px;
   border: none;
   border-radius: 1px;
 }
 
+/*CONTAINER*/
+.container {
+  display: block;
+  margin-inline: 10px;
+  margin-block-start: 25px;
+}
+.welcome{
+  padding: 15px;
+}
+#welcome-text{
+  text-align: start;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  line-height: 2rem;
+}
+#welcome-cta{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#my-name{
+  color: var(--secondary-color);
+}
+.arrow-container{
+  width: 25px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--third-color);
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  margin-inline-start: auto;
+  transition: opacity .3s ease-in-out, scale .3s ease-in-out;
+  animation: fadeIn 2s ease-in 3s infinite alternate both;
+}
+.arrow{
+  width: 25%;
+  aspect-ratio: 1/1;
+  border-right: 3px solid var(--third-color);
+  border-bottom: 3px solid var(--third-color);
+  transform: rotate(45deg);
+  transition: transform .3s ease-in-out;
+}
+
+
 /*EVENTS RULES*/
-.menuItem:hover {
+.navItem:hover {
   cursor: pointer;
   scale: 1.1;
 }
@@ -137,11 +206,24 @@ hr{
   margin-right: 10px;
   background-color: var(--secondary-color);
 }
+button:hover {
+  box-shadow: var(--default-shadow);
+  background-color: var(--third-color);
+}
+.arrow-container:hover{
+  scale: 1.1;
+  cursor: pointer;
+}
+.arrow-container:hover .arrow{
+  transform: rotate(-315deg);
+}
+
 
 /*STATES RULES*/
 
-.menuItemActive {
+.navItemActive {
   border-bottom: 2px solid var(--secondary-color);
+  scale: 1.1;
 }
 
 /*ANIMATIONS*/
@@ -150,14 +232,39 @@ hr{
     opacity: 0;
     transform: translateX(-10px);
   }
-  to{
+  to {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0;
+  }
+}
+
 /*MEDIA QUERIES*/
 @media screen and (min-width: 720px) {
+  body {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   nav {
     display: block;
   }
@@ -167,7 +274,7 @@ hr{
   .burger {
     display: none;
   }
-  .dropdown{
+  .dropdown {
     display: none !important;
   }
 }

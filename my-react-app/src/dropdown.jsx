@@ -1,13 +1,15 @@
 import ListItem from "./listItem"
+import Switcher2 from "./switcher2"
 
 function Dropdown(){
 
     return(
         <div className="dropdown">
+            <Switcher2/>
             <ul className="dropdownMenu">
-                <ListItem className="dropdownItem" content='About'></ListItem>
-                <ListItem className="dropdownItem" content='Services'></ListItem>
-                <ListItem className="dropdownItem" content='Contacts'></ListItem>
+                <ListItem className="dropdownItem" content='About' data-id='About'></ListItem>
+                <ListItem className="dropdownItem" content='Services' data-id='Services'></ListItem>
+                <ListItem className="dropdownItem" content='Contacts' data-id='Contacts'></ListItem>
             </ul>
         </div>
     )

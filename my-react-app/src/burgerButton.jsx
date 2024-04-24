@@ -2,9 +2,9 @@ function BurgerButton() {
 
   const dropMenu = () => {
     let dropdown = document.querySelector('.dropdown');
-    dropdown.style.display == 'block' 
+    dropdown.style.display == 'flex' 
     ? dropdown.style.display = 'none' 
-    : dropdown.style.display = 'block';
+    : dropdown.style.display = 'flex';
 }
 
   return (

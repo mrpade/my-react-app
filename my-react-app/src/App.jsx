@@ -1,4 +1,5 @@
 import Header from './header.jsx'
+import Container from './container.jsx'
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
     
     <Header/>
+    <Container/>
 
     </>
   )
