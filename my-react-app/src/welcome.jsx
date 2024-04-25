@@ -12,12 +12,22 @@ function Welcome() {
           Designer, Frontend Web <br></br> Developer and Photographer
         </p>
         <div id="welcome-cta">
-          <Button content="Download CV" />
+          <Button content='Download CV'></Button>
           <Button content="Let's Talk" />
           <div className="arrow-container">
             <div className="arrow"></div>
           </div>
         </div>
+      </div>
+      <div id="welcome-visuals">
+          <div id="logo-icon">
+            <img src="/src/assets/logoPart1.svg" className="mr-icon" id="mr-icon1"></img>
+            <img src="/src/assets/logoPart2.svg" className="mr-icon" id="mr-icon2"></img>
+            <img src="/src/assets/logoPart3.svg" className="mr-icon" id="mr-icon3"></img>
+          </div>
+          <div id="welcome-img">
+            <img src="/src/assets/heroimgplaceholder.svg"></img>
+          </div>
       </div>
     </div>
   );

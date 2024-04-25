@@ -192,6 +192,41 @@ hr {
   transform: rotate(45deg);
   transition: transform .3s ease-in-out;
 }
+#welcome-visuals{
+  display: flex;
+  margin-block-start: 25px;
+  justify-content: space-between;
+}
+#logo-icon{
+  width: 35%;
+  display: flex;
+}
+.mr-icon{
+  max-width: 25%;
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+  animation: bounce 2s ease-in infinite alternate both;
+}
+#mr-icon1{
+  animation: slideIn 2s ease-in infinite alternate both;
+}
+#mr-icon2{
+  max-width: 31%;
+  animation: fadeIn 2s ease-in infinite alternate-reverse both;
+}
+#mr-icon3{
+  animation: slideLeft 2s ease-in infinite alternate both;
+}
+#welcome-img{
+  width: 60%;
+  margin-inline-start: auto;
+}
+#welcome-img img{
+  max-width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin: auto;
+  background: linear-gradient(0, var(--third-color)20%, var(--secondary-color));
+}
 
 
 /*EVENTS RULES*/
@@ -258,6 +293,28 @@ button:hover {
     scale: 0;
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(45%);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50%{
+    transform: translateY(45%);
+    opacity: 0.7;
+  }
+  75%{
+    transform: translateY(-45%);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(45%);
+    opacity: 0;
+  }
+}
 
 /*MEDIA QUERIES*/
 @media screen and (min-width: 720px) {
@@ -276,5 +333,38 @@ button:hover {
   }
   .dropdown {
     display: none !important;
+  }
+  .container{
+    margin-block-start: 50px;
+  }
+  .welcome{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #welcome-text{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  #welcome-cta{
+    width: 82%;
+  }
+  .arrow-container{
+  animation: fadeIn 2s ease-in 4 alternate backwards;
+  }
+  #welcome-visuals{
+    width: 45%;
+    margin-block-start: 0;
+  }
+  #logo-icon{
+    display: none;
+  }
+  #welcome-img{
+    margin-inline: auto;
+    width: 50%;
   }
 }
