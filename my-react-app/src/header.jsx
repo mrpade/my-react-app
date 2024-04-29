@@ -10,7 +10,7 @@ function Header(){
         <div className="navbar">
             <img src="/src/assets/MON LOGOwhite.svg" alt="LOGO" className="brand"></img>
             <nav>
-                <ul>
+                <ul className="menu">
                     <ListItem className="menuItem menuItemActive" content='Home' data-id='Home'></ListItem>
                     <ListItem className="menuItem" content='About' data-id='About'></ListItem>
                     <ListItem className="menuItem" content='Services' data-id='Services'></ListItem>

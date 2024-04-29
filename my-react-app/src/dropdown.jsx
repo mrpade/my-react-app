@@ -6,7 +6,7 @@ function Dropdown(){
     return(
         <div className="dropdown">
             <Switcher2/>
-            <ul className="dropdownMenu">
+            <ul className="menu dropdownMenu">
                 <ListItem className="dropdownItem" content='About' data-id='About'></ListItem>
                 <ListItem className="dropdownItem" content='Services' data-id='Services'></ListItem>
                 <ListItem className="dropdownItem" content='Contacts' data-id='Contacts'></ListItem>
