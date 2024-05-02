@@ -1,4 +1,6 @@
 import Button from "./button";
+import { FaDownload } from "react-icons/fa6";
+import { FaEnvelopeOpen } from "react-icons/fa6";
 
 function Welcome() {
   return (
@@ -12,8 +14,14 @@ function Welcome() {
           Designer, Frontend Web <br></br> Developer and Photographer
         </p>
         <div id="welcome-cta">
-          <Button content='Download CV'></Button>
-          <Button content="Let's Talk" />
+          <button>
+            Download CV
+            <FaDownload className="fa-icons" />
+          </button>
+          <button>
+            Let&apos;s talk
+            <FaEnvelopeOpen className="fa-icons"/>
+          </button>
           <div className="arrow-container">
             <div className="arrow"></div>
           </div>
@@ -26,7 +34,7 @@ function Welcome() {
             <img src="/src/assets/logoPart3.svg" className="mr-icon" id="mr-icon3"></img>
           </div>
           <div id="welcome-img">
-            <img src="/src/assets/heroimgplaceholder.svg"></img>
+            <img src="/src/assets/Me-Hero.svg"></img>
           </div>
       </div>
     </div>

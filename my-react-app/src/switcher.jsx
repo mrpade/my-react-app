@@ -4,7 +4,6 @@ function Switcher() {
         const root = document.querySelector(':root');
         const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color');
         const thirdColor = getComputedStyle(root).getPropertyValue('--third-color');
-        const defaultShadow = getComputedStyle(root).getPropertyValue('--default-shadow');
         const brand = document.querySelector('.brand');
         const switcher = document.querySelector('.switchButton');
 
@@ -16,10 +15,19 @@ function Switcher() {
             switcher.style.transform = 'translateX(100%)'
         }
 
-        brand.src == '/src/assets/MON LOGOwhite.svg'
-        ? brand.setAttribute('src', "/src/assets/MON LOGO_1.svg")
-        : brand.setAttribute('src', "/src/assets/MON LOGOwhite.svg")
+        /*let logo = brand.getAttribute('src')
+        console.log(logo);
+        if (logo == '/src/assets/MON LOGO_1.svg'){
+            brand.setAttribute ('src','/src/assets/MON LOGOwhite.svg')
+        } else if (logo.src == '/src/assets/MON LOGOwhite.svg'){
+            brand.setAttribute ('src', '/src/assets/MON LOGO_1.svg')
+        }*/
+        brand.src == '/src/assets/MON LOGO_1.svg'
+        ? brand.setAttribute('src', "/src/assets/MON LOGOwhite.svg")
+        : brand.setAttribute('src', "/src/assets/MON LOGO_1.svg")
         /*brand.setAttribute('src', '/src/assets/MON LOGO_1.svg')*/
+        let logo = brand.getAttribute('src')
+        console.log(logo);
 
         primaryColor == '#2c2e48'
         ? document.documentElement.style.setProperty('--primary-color', '#fafafa')
@@ -29,12 +37,6 @@ function Switcher() {
         ? document.documentElement.style.setProperty('--third-color', '#2c2e48')
         : document.documentElement.style.setProperty('--third-color', '#fafafa');
 
-        /*thirdColor == '#2c2e48'
-        ? document.documentElement.style.setProperty('--default-shadow', '0 2px 5px #000')
-        : document.documentElement.style.setProperty('--default-shadow', '0 2px 5px #a8a8a8');*/
-
-        /*document.documentElement.style.setProperty('--third-color', '#2c2e48');
-        document.documentElement.style.setProperty('--primary-color', '#fafafa');*/
     }
     return(
         <div className="switcher" onClick={theme}>

@@ -1,5 +1,6 @@
 import Header from './header.jsx'
 import Container from './container.jsx'
+import Footer from "./footer"
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     
     <Header/>
     <Container/>
+    <Footer/>
 
     </>
   )
