@@ -15,6 +15,9 @@
 a{
   text-decoration: none;
 }
+h4{
+  margin: 0;
+}
 /*
 .poppins-regular {
   font-family: "Poppins", sans-serif;
@@ -33,6 +36,7 @@ a{
 
 /*STATICS RULES*/
 body {
+  
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: var(--third-color);
@@ -260,12 +264,76 @@ hr {
   transition: transform .1s ease-in-out, box-shadow .1s ease-in-out;
   cursor: pointer;
 }
-.category h3{
+h3{
   margin: 0;
+  text-align: center;
 }
 .category ul{
   list-style: square;
   margin-block-end: 0;
+}
+.stacks{
+  width: 90%;
+  margin-inline: auto;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+}
+#stacks-container{
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-row-gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.stacks-type{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: scale .3s ease-in, padding .3s ease-in, margin-inline-start .3s ease-in, border-radius .3s ease-in;
+}
+.progress-bar-container{
+  width: 100px;
+  height: 10px;
+  border: 2px solid var(--primary-color);
+  margin-block: 5px;
+}
+.progress-bar{
+  width: 70%;
+  height: 100%;
+  background-color: var(--secondary-color);
+}
+#html, #css, #shoot, #light{width: 80%;}
+#ps,#retouch{width: 75%;}
+#js, #bootstrap{width: 70%;}
+#git, #ai{width: 65%;}
+#react, #ae{width: 30%;}
+.photo-service{
+  padding: 10px;
+}
+.photo-stacks{
+  width: 90%;
+  margin-inline: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.photo-portfolio{
+  width: 90%;
+  margin-inline: auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-row-gap: 10px;
+  justify-content: center;
+}
+.photo-portfolio img{
+  max-width: 100px;
+  margin-inline: auto;
+  border-radius: var(--sm-border-radius);
+  opacity: 0.6;
+  transition: scale .3s ease-in-out, opacity .3s ease-in-out, border-radius .3s ease-in-out;
 }
 
 /*FOOTER*/
@@ -335,7 +403,17 @@ button:hover {
   color: var(--secondary-color);
   scale: 2;
 }
-
+/*.stacks-type:hover{
+  scale: 0.9;
+  margin-inline-start: 0;
+  padding-inline: 5px;
+  border-radius: var(--sm-border-radius);
+}*/
+.photo-portfolio img:hover{
+  scale: 1.1;
+  opacity: 1;
+  border-radius: 0;
+}
 
 /*STATES RULES*/
 
@@ -469,6 +547,25 @@ button:hover {
     justify-content: space-between;
 
   }
+  .stacks-type{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline-start: 0;
+  }
+  .photo-service{
+    display: flex;
+  }
+  .photo-stacks{
+    display: block;
+    align-content: center;
+    width: 20%;
+  }
+  .photo-portfolio{
+    width: 70%;
+    grid-template-columns: repeat(4, 20%);
+  }
 
 }
 
@@ -506,7 +603,7 @@ button:hover {
     line-height: 2.5rem;
   }
   #welcome-cta{
-    margin-inline-end: 37%;
+
   }
   .arrow-container{
     display: none;
@@ -535,4 +632,17 @@ button:hover {
   .category{
     width: 30%;
   }
+  .photo-service{
+    display: flex;
+  }
+  .photo-stacks{
+    display: block;
+    align-content: center;
+    width: 20%;
+  }
+  .photo-portfolio{
+    width: 70%;
+    grid-template-columns: repeat(5, 20%);
+  }
+  
 }
